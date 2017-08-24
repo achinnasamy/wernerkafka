@@ -1,0 +1,22 @@
+./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic HDFS-TOPIC
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic HDFS-TOPIC
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic ALERT-TOPIC --property parse.key=true --property key.separator=:
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation ALL --topic BASHAS
+
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation WRITE --topic HULK
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --producer --topic HULKER
+
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --producer --topic BASHAS
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --consumer --topic BASHAS --group *
+
+
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --deny-principal User:* --operation ALL --topic DATAS
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --list --topic FARM-TOPIC
