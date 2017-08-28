@@ -1,8 +1,30 @@
-./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic HDFS-TOPIC
+[1] echo $PATH
 
-./kafka-console-producer.sh --broker-list localhost:9092 --topic HDFS-TOPIC
+[2] export PATH=$PATH:/path/to/jdk/bin
 
-./kafka-console-producer.sh --broker-list localhost:9092 --topic ALERT-TOPIC --property parse.key=true --property key.separator=:
+[3] ps -ef | grep kafka
+
+[4] kill -9 <process_id>
+
+
+[5] ./zookeeper-server-start.sh ../config/zookeeper.properties 
+
+
+[6] ./kafka-server-start.sh  ../config/server.properties
+
+[7] ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic DATASOURCE-TOPIC
+
+[8]  ./kafka-console-producer.sh --broker-list localhost:9092 --topic DATASOURCE-TOPIC
+
+[9] ./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic DATASOURCE-TOPIC --from-beginning
+
+
+
+
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic VEH-TOPIC
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic DATASOURCE-TOPIC --property parse.key=true --property key.separator=:
 
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation ALL --topic BASHAS
 
