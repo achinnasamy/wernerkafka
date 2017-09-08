@@ -2,6 +2,7 @@ package com.dmac
 
 import java.util.Properties
 
+import kafka.message.GZIPCompressionCodec
 import org.apache.kafka.clients.producer.{Callback, KafkaProducer, ProducerRecord, RecordMetadata}
 
 /**
@@ -21,7 +22,9 @@ object KafkaProducer {
     props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     props.put("linger.ms", "1")
     props.put("batch.size","445")
-    props.put("compression.codec","1")
+    props.put("compression.codec","3")
+    props.put("compression.topics","DATA-SOURCE-TOPIC,BDAS-TOPIC")
+
 
     val producer = new KafkaProducer[String, String](props)
 
@@ -29,6 +32,15 @@ object KafkaProducer {
 
 
     val data = new ProducerRecord[String, String]("AWS", "key_12", "Richard Feynman 101 - thank you for your physics")
+
+
+    val today = new java.util.Date();
+    today.getTime;
+
+    val data1 = new ProducerRecord[String, String]("TOPIC", "KEY", "VALUE")
+    val data2 = new ProducerRecord[String, String]("TOPIC", 100, "KEY", "VALUE")
+    val data3 = new ProducerRecord[String, String]("TOPIC", "VALUE")
+    val data4 = new ProducerRecord[String, String]("TOPIC", 100, today.getTime, "KEY", "VALUE")
 
     // Send a topic to a particular partition
     //val data = new ProducerRecord[String, String]("EWS", 0, "key_12", "Richard Feynman 101 - thank you for your physics")

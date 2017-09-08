@@ -13,8 +13,33 @@ object GroupingOperations {
 
 
   def main(args : Array[String]) = {
+
+
     val builder = new KStreamBuilder
     val data = builder.stream(Serdes.String, Serdes.String, "BDAS")
+
+    data.to("BTOPIC")
+
+    val ktableS =  builder.table(Serdes.String, Serdes.String, "BDAS")
+
+    val countTable = data.groupByKey().count()
+
+    countTable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     val groupedStream:KGroupedStream[String, String] = data.groupByKey()

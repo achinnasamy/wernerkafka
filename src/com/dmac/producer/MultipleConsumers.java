@@ -60,6 +60,9 @@ public class MultipleConsumers {
                         partitions.size());
 
 
+                consumer.unsubscribe();
+                consumer.subscribe(Arrays.asList("ANZ-TOPIC"));
+
                 System.out.println(formattedText);
 
 

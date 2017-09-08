@@ -19,15 +19,17 @@ public class ZookeeperManager {
             }
         });
 
-        //byte[] data = "My first zookeeper app".getBytes();
-
-       //zookeeper.create("/ARAVINDH-TOPIC12", data, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 
 
-        while (true) {
+        byte[] data = "My first zookeeper app".getBytes();
 
-            System.out.print("\n"+zookeeper.getSessionId());
-        }
+       zookeeper.create("/ARAVINDH-TOPIC12", data, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+
+
+//        while (true) {
+//
+//            System.out.print("\n"+zookeeper.getSessionId());
+//        }
 
     }
 }

@@ -34,13 +34,13 @@ object KafkaConsumer {
     val consumer = new KafkaConsumer[String, String](props)
 
     // Consumer consuming from a Particular Topic
-    consumer.subscribe(Arrays.asList("AWS"))
+    consumer.subscribe(Arrays.asList("DATA-OCEAN-TOPIC"))
 
     /**
       * Consumer consuming from a particular partition
       */
-    val partition0 = new TopicPartition("AWS", 0);
-    consumer.assign(Arrays.asList(partition0))
+//    val partition0 = new TopicPartition("AWS", 0);
+//    consumer.assign(Arrays.asList(partition0))
 
     while (true) {
       val records = consumer.poll(1)
@@ -58,6 +58,6 @@ object KafkaConsumer {
 
 class ForEacher extends java.util.function.Consumer[ConsumerRecord[String,String]] {
   override def accept(t: ConsumerRecord[String,String]): Unit = {
-    println(t.key())
+    println(t.key() + " - - - " + t.value())
   }
 }
