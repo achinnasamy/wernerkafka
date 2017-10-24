@@ -34,8 +34,8 @@ public class EchelonProducer {
 
         producer.send(data);
 
-        Map<MetricName, Metric> metrics = producer.metrics();
-        metrics.forEach(new IteratorMetricClass());
+//        Map<MetricName, Metric> metrics = producer.metrics();
+//        metrics.forEach(new IteratorMetricClass());
 
 
         producer.flush();

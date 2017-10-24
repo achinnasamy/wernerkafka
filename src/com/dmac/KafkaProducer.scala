@@ -2,8 +2,9 @@ package com.dmac
 
 import java.util.Properties
 
-import kafka.message.GZIPCompressionCodec
+import kafka.message.{GZIPCompressionCodec, LZ4CompressionCodec}
 import org.apache.kafka.clients.producer.{Callback, KafkaProducer, ProducerRecord, RecordMetadata}
+import org.xerial.snappy.Snappy
 
 /**
   * Created by dharshekthvel on 2/8/17.
@@ -22,7 +23,11 @@ object KafkaProducer {
     props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     props.put("linger.ms", "1")
     props.put("batch.size","445")
-    props.put("compression.codec","3")
+
+
+    props.put("request.required.acks", "-1")
+
+    props.put("compression.codec","1")
     props.put("compression.topics","DATA-SOURCE-TOPIC,BDAS-TOPIC")
 
 
@@ -78,7 +83,12 @@ object KafkaProducer {
       // Scala producer with a callback
       producer.send(data, oncallback)
 
+      val metadata = producer.send(data).get()
 
+      metadata
+
+
+      producer.metrics()
 
     }
     catch {

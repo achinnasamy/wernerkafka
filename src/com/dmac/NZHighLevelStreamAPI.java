@@ -20,16 +20,22 @@ public class NZHighLevelStreamAPI {
 
         KStream mappedStream = data.mapValues((v)-> v.toString().toUpperCase());
 
-        mappedStream.to("NEW-TOPIC");
+        data.mapValues((x) -> x.toString().toLowerCase()).to("ANOTHER-TOPIC");
+
+
+        mappedStream.to("FINAL-TOPIC");
 
         KStream<String,String>[] branches = mappedStream.branch((key,value) -> key.toString().startsWith("AUS"),
-                            (key,value) -> key.toString().startsWith("NEW"));
+                                                                (key,value) -> key.toString().startsWith("NEW"));
 
 
-        KStream mappedStream1 = branches[0];
-        KStream mappedStream2 = branches[1];
+        branches[0].to("NEW-TOPIC");
 
-        mappedStream.to("");
+
+
+
+
+
 
 
         Properties props = new Properties();

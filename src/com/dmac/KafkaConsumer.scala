@@ -20,8 +20,8 @@ object KafkaConsumer {
     val props = new Properties()
     props.put("bootstrap.servers", "localhost:9092")
     // When changed the consumer group, it behaves as a TOPIC or QUEUE
-    props.put("group.id", "AWS-CONSUMER2")
-    props.put("enable.auto.commit", "false")
+    props.put("group.id", "AWS-CONSUMER3")
+    props.put("enable.auto.commit", "true")
     props.put("auto.commit.interval.ms", "1000")
     props.put("session.timeout.ms", "30000")
     props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
@@ -39,16 +39,20 @@ object KafkaConsumer {
     /**
       * Consumer consuming from a particular partition
       */
-//    val partition0 = new TopicPartition("AWS", 0);
-//    consumer.assign(Arrays.asList(partition0))
+    val partition0 = new TopicPartition("AWS", 0);
+    consumer.assign(Arrays.asList(partition0))
+
 
     while (true) {
       val records = consumer.poll(1)
 
       records.forEach(new ForEacher)
+
+
+
 //
 //      consumer.commitAsync()
-//      consumer.commitSync()
+      consumer.commitSync()
 
 
 
