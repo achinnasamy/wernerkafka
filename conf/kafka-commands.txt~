@@ -1,0 +1,98 @@
+[1] 	echo $PATH
+
+[2] 	export PATH=$PATH:/path/to/jdk/bin
+
+[3] 	ps -ef | grep kafka
+
+[4] 	kill -9 <process_id>
+
+[4.1]	chmod 777 dir
+
+
+[5] 	./zookeeper-server-start.sh ../config/zookeeper.properties 
+
+[6] 	./kafka-server-start.sh  ../config/server.properties
+
+[7.0] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 60 --topic CASSANDRA-TOPIC
+[7] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic UNISYS-TOPIC
+
+[8]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic UNISYS-TOPIC
+
+[9] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic UNISYS-TOPIC --from-beginning
+
+[10] 	Create 20 topics
+		./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic DATASOURCE-TOPIC
+
+
+[11] 	server.properties => /tmp/kafka-logs
+
+[12] 	/tmp/kafka-logs
+
+[13] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 30 --topic DATASOURCE-TOPIC
+
+[14] 	/tmp/kafka-logs
+
+./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files
+/tmp/dharshekth-kafka/MESH_TOPIC-1/00000000000000000000.log
+
+
+[15]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
+
+[16] 	./kafka-console-consumer.sh --consumer.config /tmp/consumer.config --formatter "kafka.coordinator.GroupMetadataManager\$OffsetsMessageFormatter" --bootstrap-server localhost:9092 --topic 		__consumer_offsets
+
+[17]
+	---Servers---
+	listeners=PLAINTEXT://host.name:port,SSL://host.name:port
+
+	ssl.keystore.location=/var/private/ssl/kafka.server.keystore.jks
+	ssl.keystore.password.generator=test1234
+	ssl.key.password=test1234
+	ssl.truststore.location=/var/private/ssl/kafka.server.truststore.jks
+	ssl.truststore.password.generator=test1234
+
+	security.inter.broker.protocol=SSL
+
+	--- Client ---
+
+	security.protocol=SSL
+	ssl.truststore.location=/var/private/ssl/kafka.client.truststore.jks
+	ssl.truststore.password=test1234
+
+	ssl.keystore.location=/var/private/ssl/kafka.client.keystore.jks
+	ssl.keystore.password=test1234
+	ssl.key.password=test1234
+
+[18]	Configuring multiple broker and cluster
+	change the broker id
+	change the path where it stores the partition
+
+
+[19]
+
+
+
+
+
+
+
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic VEH-TOPIC
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic DATASOURCE-TOPIC --property parse.key=true --property key.separator=:
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation ALL --topic BASHAS
+
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation WRITE --topic HULK
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --producer --topic HULKER
+
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --producer --topic BASHAS
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --consumer --topic BASHAS --group *
+
+
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --deny-principal User:* --operation ALL --topic DATAS
+
+./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --list --topic FARM-TOPIC

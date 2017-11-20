@@ -22,7 +22,22 @@ public class KafkaTopicEchoer {
         KStream data = builder.stream(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
 
 
-        data.foreach((key,value) -> System.out.println("Key = " + key + " Value = " + value));
+        data.mapValues();
+
+
+        data.to("DESTINATIONTOPIC");
+
+
+        KStream data3 = builder.stream(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
+
+
+        data3.mapValues();
+
+
+        data3.to("DESTINATIONTOPIC2");
+
+
+        //data.foreach((key,value) -> System.out.println("Key = " + key + " Value = " + value));
 
 
         Properties props = new Properties();
@@ -34,12 +49,12 @@ public class KafkaTopicEchoer {
 
         KafkaStreams stream = new KafkaStreams(builder, props);
 
-        stream.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-            @Override
-            public void uncaughtException(Thread t, Throwable e) {
-                System.out.println(e.getMessage());
-            }
-        });
+//        stream.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+//            @Override
+//            public void uncaughtException(Thread t, Throwable e) {
+//                System.out.println(e.getMessage());
+//            }
+//        });
 
         stream.start();
 

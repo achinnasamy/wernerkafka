@@ -24,32 +24,31 @@ public class LowLevelAPIStreamProcessing {
 
         StreamsConfig config = new StreamsConfig(settings);
 
-        StateStoreSupplier dataStore = Stores.create("DATA_STORE")
-                .withKeys(Serdes.String())
-                .withValues(Serdes.String())
-                .persistent()
-                .disableLogging() // disable backing up the store to a changelog topic
-                .build();
-
-        StateStoreSupplier lengthStore = Stores.create("LENGTH_STORE")
-                .withKeys(Serdes.String())
-                .withValues(Serdes.String())
-                .persistent()
-                .disableLogging() // disable backing up the store to a changelog topic
-                .build();
+//        StateStoreSupplier dataStore = Stores.create("DATA_STORE")
+//                .withKeys(Serdes.String())
+//                .withValues(Serdes.String())
+//                .persistent()
+//                .disableLogging() // disable backing up the store to a changelog topic
+//                .build();
+//
+//        StateStoreSupplier lengthStore = Stores.create("LENGTH_STORE")
+//                .withKeys(Serdes.String())
+//                .withValues(Serdes.String())
+//                .persistent()
+//                .disableLogging() // disable backing up the store to a changelog topic
+//                .build();
 
         TopologyBuilder builder = new TopologyBuilder();
         builder.addSource("Source", "DATASOURCE-TOPIC")
 
 
                 .addProcessor("CAPITAL-PROCESSOR",new DataProcessSupplier(), "Source")
-
                 .addProcessor("CAPITAL-LENGTH-PROCESSOR",new CapitalToLengthSupplier(), "CAPITAL-PROCESSOR")
 
 
 
-                .addStateStore(dataStore, "CAPITAL-PROCESSOR")
-                .addStateStore(lengthStore, "CAPITAL-LENGTH-PROCESSOR")
+//                .addStateStore(dataStore, "CAPITAL-PROCESSOR")
+//                .addStateStore(lengthStore, "CAPITAL-LENGTH-PROCESSOR")
 
 
 

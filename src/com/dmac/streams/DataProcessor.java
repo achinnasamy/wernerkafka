@@ -18,7 +18,7 @@ public class DataProcessor implements Processor<String, String> {
     public void init(ProcessorContext _processorContext) {
 
         this.processorContext = _processorContext;
-        kvStore = (KeyValueStore) _processorContext.getStateStore("DATA_STORE");
+        //kvStore = (KeyValueStore) _processorContext.getStateStore("DATA_STORE");
 
         // call the punctuate
         this.processorContext.schedule(1000);
@@ -30,7 +30,7 @@ public class DataProcessor implements Processor<String, String> {
 
         // Do complex processing and forward it to next topic
         processorContext.forward(key.toUpperCase(), value.toUpperCase());
-        kvStore.put(key.toUpperCase(),value.toUpperCase());
+        //kvStore.put(key.toUpperCase(),value.toUpperCase());
     }
 
     @Override
@@ -41,7 +41,7 @@ public class DataProcessor implements Processor<String, String> {
     @Override
     public void close() {
 
-        kvStore.close();
+        //kvStore.close();
     }
 
 

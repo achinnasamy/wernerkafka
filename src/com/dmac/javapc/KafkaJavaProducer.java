@@ -21,6 +21,7 @@ public class KafkaJavaProducer {
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("linger.ms", "1");
+        props.put("retries", Integer.MAX_VALUE);
         props.put("batch.size","445");
         props.put("request.required.acks", "-1");
         props.put("compression.codec","1");

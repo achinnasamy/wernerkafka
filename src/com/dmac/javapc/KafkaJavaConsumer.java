@@ -46,14 +46,19 @@ public class KafkaJavaConsumer {
         while (true) {
             ConsumerRecords records = consumer.poll(1);
 
+
+            consumer.unsubscribe();
+            consumer.subscribe(Arrays.asList("VOLDEMORT-TOPIC"));
+
+
             records.forEach(new ForEachPrinter());
 
 
 
 //
 //      consumer.commitAsync()
-            consumer.commitSync();
-
+//            consumer.commitSync();
+//
 
 
         }
