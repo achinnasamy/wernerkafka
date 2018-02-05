@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * Created by dharshekthvel on 24/10/17.
  */
-public class KafkaJavaProducer {
+public class WalmartKafkaJavaProducer {
 
     public static void main(String args[]) {
 
@@ -30,23 +30,6 @@ public class KafkaJavaProducer {
 
         KafkaProducer producer = new KafkaProducer(props);
 
-        //ProducerRecord data = new ProducerRecord("TOPIC", "key", "value")
-
-        Date today = new java.util.Date();
-
-        ProducerRecord data = new ProducerRecord("REDIS-TOPIC", "123key_121", "data ingestion done.");
-
-
-        ProducerRecord data1 = new ProducerRecord("TOPIC", "KEY", "VALUE");
-
-
-
-        //ProducerRecord data2 = new ProducerRecord("TOPIC", 100, "KEY", "VALUE");
-        //ProducerRecord data3 = new ProducerRecord("TOPIC", "VALUE");
-        //ProducerRecord data4 = new ProducerRecord("TOPIC", 100, today.getTime(), "KEY", "VALUE");
-
-        // Send a topic to a particular partition
-        //val data = new ProducerRecord[String, String]("EWS", 0, "key_12", "Richard Feynman 101 - thank you for your physics")
 
         Callback oncallback = new Callback() {
             public void onCompletion(RecordMetadata recordMetadata, Exception e)
@@ -58,7 +41,12 @@ public class KafkaJavaProducer {
             }
         };
 
-        producer.send(data);
+
+        ProducerRecord data = new ProducerRecord("WALMART-TOPIC", 13, "key-data", "walmart is doing good");
+
+
+
+        producer.send(data, oncallback);
         producer.flush();
 
     }

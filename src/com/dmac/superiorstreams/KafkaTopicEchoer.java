@@ -22,7 +22,7 @@ public class KafkaTopicEchoer {
         KStream data = builder.stream(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
 
 
-        data.mapValues();
+        //data.mapValues();
 
 
         data.to("DESTINATIONTOPIC");
@@ -31,7 +31,7 @@ public class KafkaTopicEchoer {
         KStream data3 = builder.stream(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
 
 
-        data3.mapValues();
+        //data3.mapValues();
 
 
         data3.to("DESTINATIONTOPIC2");

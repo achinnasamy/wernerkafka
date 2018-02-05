@@ -29,8 +29,8 @@ val props = new Properties()
     val producer = new KafkaProducer[String, String](props)
 
     val data = new ProducerRecord[String, String]("DATASOURCE-TOPIC", "data-ingestion", "BIG-DATA")
-    val data1 = new ProducerRecord[String, String]("DATASOURCE-TOPIC", "BIG-DATA")
-    val data2 = new ProducerRecord[String, String]("DATASOURCE-TOPIC", 2, "data-ingestion", "BIG-DATA")
+    //val data1 = new ProducerRecord[String, String]("DATASOURCE-TOPIC", "BIG-DATA")
+    //val data2 = new ProducerRecord[String, String]("DATASOURCE-TOPIC", 2, "data-ingestion", "BIG-DATA")
 
 
       val callback = new Callback {
