@@ -50,8 +50,8 @@ public class KafkaJavaConsumer {
             consumer.commitAsync();
             consumer.commitSync();
 
-            consumer.seekToBeginning();
-            consumer.seekToEnd();
+            //consumer.seekToBeginning();
+            //consumer.seekToEnd();
 
             records.forEach(new ForEachPrinter());
 
