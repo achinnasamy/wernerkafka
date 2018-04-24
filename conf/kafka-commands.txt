@@ -16,7 +16,7 @@
 
 [9] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 60 --topic UNISYS-TOPIC
 
-[10]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic UNISYS-TOPIC
+[10]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic CASSANDRA-TOPIC
 
 [11] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic UNISYS-TOPIC --from-beginning
 
@@ -93,3 +93,10 @@
 
 [30]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --list --topic FARM-TOPIC
+
+
+[31] ./bin/kafka-run-class.sh org.apache.kafka.clients.producer.internals.ProducerMetrics > metrics.html
+
+
+
+
