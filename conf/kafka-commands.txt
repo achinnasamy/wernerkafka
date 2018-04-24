@@ -1,6 +1,3 @@
-
-
-
 [1] 	echo $PATH
 
 [2] 	export PATH=$PATH:/path/to/jdk/bin
@@ -9,41 +6,40 @@
 
 [4] 	kill -9 <process_id>
 
-[4.1]	chmod 777 dir
+[5]	chmod 777 dir
 
+[6] 	./zookeeper-server-start.sh ../config/zookeeper.properties 
 
-[5] 	./zookeeper-server-start.sh ../config/zookeeper.properties 
+[7] 	./kafka-server-start.sh  ../config/server.properties
 
-[6] 	./kafka-server-start.sh  ../config/server.properties
+[8] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic CASSANDRA-TOPIC
 
-[7.0] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 60 --topic CASSANDRA-TOPIC
-[7] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic UNISYS-TOPIC
+[9] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 60 --topic UNISYS-TOPIC
 
-[8]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic UNISYS-TOPIC
+[10]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic UNISYS-TOPIC
 
-[9] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic UNISYS-TOPIC --from-beginning
+[11] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic UNISYS-TOPIC --from-beginning
 
-[10] 	Create 20 topics
+[12] 	Create 20 topics
 		./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic DATASOURCE-TOPIC
 
-
-[11] 	server.properties => /tmp/kafka-logs
-
-[12] 	/tmp/kafka-logs
-
-[13] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 30 --topic MONGODB-TOPIC
+[13] 	server.properties => /tmp/kafka-logs
 
 [14] 	/tmp/kafka-logs
 
+[15] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 30 --topic MONGODB-TOPIC
+
+[16] 	/tmp/kafka-logs
+
+[17]
 ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files
 /tmp/dharshekth-kafka/MESH_TOPIC-1/00000000000000000000.log
 
+[18]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
 
-[15]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
+[19] 	./kafka-console-consumer.sh --consumer.config /tmp/consumer.config --formatter "kafka.coordinator.GroupMetadataManager\$OffsetsMessageFormatter" --bootstrap-server localhost:9092 --topic 		__consumer_offsets
 
-[16] 	./kafka-console-consumer.sh --consumer.config /tmp/consumer.config --formatter "kafka.coordinator.GroupMetadataManager\$OffsetsMessageFormatter" --bootstrap-server localhost:9092 --topic 		__consumer_offsets
-
-[17]
+[20]
 	---Servers---
 	listeners=PLAINTEXT://host.name:port,SSL://host.name:port
 
@@ -65,37 +61,35 @@
 	ssl.keystore.password=test1234
 	ssl.key.password=test1234
 
-[18]	Configuring multiple broker and cluster
+[21]	Configuring multiple broker and cluster
 	change the broker id
 	change the path where it stores the partition
 
-
-[19]
-
+[22] 	./kafka-console-producer.sh --broker-list localhost:9092 --topic VEH-TOPIC
 
 
-
-
-
-
-
-./kafka-console-producer.sh --broker-list localhost:9092 --topic VEH-TOPIC
-
+[23]
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic DATASOURCE-TOPIC --property parse.key=true --property key.separator=:
 
+[24]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation ALL --topic BASHAS
 
-
+[25]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation WRITE --topic HULK
 
+[26]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --producer --topic HULKER
 
 
+[27]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --producer --topic BASHAS
+
+[28]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --consumer --topic BASHAS --group *
 
 
-
+[29]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --deny-principal User:* --operation ALL --topic DATAS
 
+[30]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --list --topic FARM-TOPIC
