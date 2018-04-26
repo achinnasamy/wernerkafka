@@ -26,6 +26,12 @@
 [13] 	server.properties => /tmp/kafka-logs
 
 [14] 	/tmp/kafka-logs
+	
+[14.1] List the topics
+./kafka-topics.sh --list --zookeeper localhost:2181
+
+[14.2] Describe the topic
+./kafka-topics.sh --describe --zookeeper localhost:2181 --topic ZETA-ENGINE-TOPIC
 
 [15] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 30 --topic MONGODB-TOPIC
 
@@ -34,6 +40,9 @@
 [17]
 ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files
 /tmp/dharshekth-kafka/MESH_TOPIC-1/00000000000000000000.log
+
+[17.1] Getting details about a consumer group
+./kafka-consumer-groups.sh --zookeeper localhost:2181 --describe --group AWS-CONSUMER3
 
 [18]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
 
