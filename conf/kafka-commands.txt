@@ -6,49 +6,78 @@
 
 [4] 	kill -9 <process_id>
 
-[5]	chmod 777 dir
+[5]	    chmod 777 dir
 
 [6] 	./zookeeper-server-start.sh ../config/zookeeper.properties 
 
 [7] 	./kafka-server-start.sh  ../config/server.properties
 
-[8] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic CASSANDRA-TOPIC
+[8] 	Creating topic
 
-[9] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 60 --topic UNISYS-TOPIC
+        ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic CASSANDRA-TOPIC
+     	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 60 --topic UNISYS-TOPIC
+     	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 30 --topic MONGODB-TOPIC
+        ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 20 --topic ETMS-TOPIC
 
-[10]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic CASSANDRA-TOPIC
+[9]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic CASSANDRA-TOPIC
+        [OR]
+        ./kafka-console-producer.sh --broker-list localhost:9092 --topic DATASOURCE-TOPIC --property parse.key=true --property key.separator=:
 
-[11] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic UNISYS-TOPIC --from-beginning
 
-[12] 	Create 20 topics
-		./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic DATASOURCE-TOPIC
+[10] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic UNISYS-TOPIC --from-beginning
 
-[13] 	server.properties => /tmp/kafka-logs
+--------------------------------- ADMINISTRATION ---------------------------------
+[11] 	Data of kafka are by default inside /tmp/kafka-logs
+        server.properties => /tmp/kafka-logs
 
-[14] 	/tmp/kafka-logs
-	
-[14.1] List the topics
-./kafka-topics.sh --list --zookeeper localhost:2181
+[12]  List the topics
+        ./kafka-topics.sh --list --zookeeper localhost:2181
 
-[14.2] Describe the topic
-./kafka-topics.sh --describe --zookeeper localhost:2181 --topic ZETA-ENGINE-TOPIC
+[13]  Describe the topic
+        ./kafka-topics.sh --describe --zookeeper localhost:2181 --topic KANDY-TOPIC
+        Topic:KANDY-TOPIC	PartitionCount:100	ReplicationFactor:1	Configs:
+        	Topic: KANDY-TOPIC	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
+        	Topic: KANDY-TOPIC	Partition: 1	Leader: 0	Replicas: 0	Isr: 0
+        	Topic: KANDY-TOPIC	Partition: 2	Leader: 0	Replicas: 0	Isr: 0
 
-[15] 	./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 30 --topic MONGODB-TOPIC
+./kafka-topics.sh --zookeeper localhost:2181 --delete --topic CHOLA
+But this will have impact only when delete.topic.enable is set to true
 
-[16] 	/tmp/kafka-logs
+Altering the partitions count for a topic
+/kafka-topics.sh --zookeeper localhost:2181 --alter --topic ZETA-ENGINE-TOPIC --partitions 20
+
+You cannot decrease the number of partitions
+./kafka-topics.sh --zookeeper localhost:2181 --alter --topic ETMS-TOPIC --partitions 5
+
+WARNING: If partitions are increased for a topic that has a key, the partition logic or ordering of the messages will be affected
+Error while executing topic command : The number of partitions for a topic can only be increased. Topic ETMS-TOPIC currently has 31 partitions, 5 would not be an increase.
+[2018-04-27 20:16:37,610] ERROR org.apache.kafka.common.errors.InvalidPartitionsException: The number of partitions for a topic can only be increased. Topic ETMS-TOPIC currently has 31 partitions, 5 would not be an increase.
+
+
+Show all the consumer groups
+./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+
+
+
+[14]    Reading a segment file
+        ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/dharshekth-kafka/MESH_TOPIC-1/00000000000000000000.log
+        ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/KANDY-TOPIC-23/00000000000000000000.timeindex
+        ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/KANDY-TOPIC-23/00000000000000000000.index
+
+
+Describe about the consumer
+./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group AWS-CONSUMER4 --describe
+
+[16]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
 
 [17]
-./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files
-/tmp/dharshekth-kafka/MESH_TOPIC-1/00000000000000000000.log
+        echo "exclude.internal.topics=false" > consumer.config
+        /kafka-console-consumer.sh --consumer.config consumer.config --formatter "kafka.coordinator.group.GroupMetadataManager\$OffsetsMessageFormatter" --bootstrap-server localhost:9092 --topic __consumer_offsets
 
-[17.1] Getting details about a consumer group
-./kafka-consumer-groups.sh --zookeeper localhost:2181 --describe --group AWS-CONSUMER3
 
-[18]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
+--------------------------------- ADMINISTRATION ---------------------------------
 
-[19] 	./kafka-console-consumer.sh --consumer.config /tmp/consumer.config --formatter "kafka.coordinator.GroupMetadataManager\$OffsetsMessageFormatter" --bootstrap-server localhost:9092 --topic 		__consumer_offsets
-
-[20]
+[18]
 	---Servers---
 	listeners=PLAINTEXT://host.name:port,SSL://host.name:port
 
@@ -70,41 +99,21 @@
 	ssl.keystore.password=test1234
 	ssl.key.password=test1234
 
-[21]	Configuring multiple broker and cluster
+[19]	Configuring multiple broker and cluster
 	change the broker id
 	change the path where it stores the partition
 
-[22] 	./kafka-console-producer.sh --broker-list localhost:9092 --topic VEH-TOPIC
-
-
-[23]
-./kafka-console-producer.sh --broker-list localhost:9092 --topic DATASOURCE-TOPIC --property parse.key=true --property key.separator=:
-
-[24]
+[20]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation ALL --topic BASHAS
-
-[25]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --operation WRITE --topic HULK
-
-[26]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:* --producer --topic HULKER
-
-
-[27]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --producer --topic BASHAS
-
-[28]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --authorizer kafka.security.auth.SimpleAclAuthorizer  --add --allow-principal User:* --consumer --topic BASHAS --group *
-
-
-[29]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --deny-principal User:* --operation ALL --topic DATAS
-
-[30]
 ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --list --topic FARM-TOPIC
 
 
-[31] ./bin/kafka-run-class.sh org.apache.kafka.clients.producer.internals.ProducerMetrics > metrics.html
+[21] ./bin/kafka-run-class.sh org.apache.kafka.clients.producer.internals.ProducerMetrics > metrics.html
 
 
 
