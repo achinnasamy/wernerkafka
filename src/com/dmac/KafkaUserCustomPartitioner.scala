@@ -21,10 +21,10 @@ class KafkaUserCustomPartitioner extends Partitioner {
 
     val key_ = key.asInstanceOf[String]
     if (key_.startsWith("M"))
-      0
+      10
     else if (key_.startsWith("C"))
-      6
+      16
     else
-      9
+      19
   }
 }
