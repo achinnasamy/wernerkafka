@@ -35,6 +35,7 @@ object UIDConsumer {
     val partitionTwentyFive = new TopicPartition("KANDY-TOPIC", 25)
     consumer.assign(Arrays.asList(partitionTwentyThree,partitionTwentyFour,partitionTwentyFive))
 
+
     while (true) {
 
       val records = consumer.poll(1)

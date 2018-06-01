@@ -5,11 +5,12 @@ import java.util.Properties
 import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams._
 import org.apache.kafka.streams.kstream._
+import org.apache.kafka.streams.state.Stores
 
 /**
   * Created by dharshekthvel on 5/3/18.
   */
-object ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter {
+object ScalaStreamProcessingonHighLevelKafkaAPIGroupBy {
 
   def main(args: Array[String]) = {
 
@@ -17,27 +18,29 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter {
 
     val dataStream = builder.stream[String,String]("HDFS-TOPIC")
 
-    val mappedDataStream = dataStream.map[String, String] {
-      new KeyValueMapper[String, String, KeyValue[String, String]] {
-        override def apply(key: String, value: String): KeyValue[String, String] = {
-          new KeyValue(key.concat("__KEY__IS__MAPPED___"), value.concat("___VALUE___IS___MAPPED___"))
-        }
-      }
-    }
+    val countedStore = Stores.inMemoryKeyValueStore("COUNTED-STORE")
 
-    val redisfilteredDataStream = dataStream.filter(new Predicate[String, String] {
-      override def test(key: String, value: String): Boolean = value.startsWith("redis")
+    val materializedStore =   Materialized.as(countedStore)
+                   .withKeySerde(Serdes.String())
+                   .withValueSerde(Serdes.Long())
+                   .withCachingDisabled()
+
+
+
+¡
+    val redisGroupedDataStream = dataStream.groupBy(new KeyValueMapper[String, String, String]() {
+      override def apply(key: String, word: String): String = word
     })
 
-    val capsuleNetworkDataStream = dataStream.filterNot(new Predicate[String, String] {
-      override def test(key: String, value: String): Boolean = value.startsWith("neuralnetwork")
-    })
+    /**
+      * GroupByKey
+      */
+    val keyGroupedStream = dataStream.groupByKey()
 
-    mappedDataStream.to("MAPPED_HDFS_DATA_TOPIC")
 
-    redisfilteredDataStream.to("REDIS_DATA_TOPIC")
+    keyGroupedStream.count(materializedStore)
 
-    capsuleNetworkDataStream.to("CAPSULE_NETWORK_TOPIC")
+    //redisGroupedDataStream.count(materializedStore).toStream.to("REDIS_DATA_TOPIC")
 
     val topology = builder.build()
 
@@ -52,6 +55,7 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter {
     println(topology.describe())
 
     val stream = new KafkaStreams(topology, config)
+
 
     stream.start()
 

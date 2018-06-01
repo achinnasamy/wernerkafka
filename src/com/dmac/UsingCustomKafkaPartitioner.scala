@@ -2,7 +2,7 @@ package com.dmac
 
 import java.util.Properties
 
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.clients.producer.{Callback, KafkaProducer, ProducerRecord, RecordMetadata}
 
 /**
   * Created by dharshekthvel on 31/5/17.
@@ -27,18 +27,30 @@ object UsingCustomKafkaPartitioner {
 
 
     for (i <- 100 to 120) {
-      val key = "Mesh_key".concat(i.toString)
+      val key = "Zeta_key".concat(i.toString)
       val value = "MESH_VALUE_".concat(i.toString)
 
-      val data = new ProducerRecord[String, String]("BINTELLIGENCE",
+      val data = new ProducerRecord[String, String]("ETMS-TOPIC",
                                                     key,
                                                     value)
 
-      producer.send(data)
+      producer.send(data, oncallback)
+      producer.flush()
     }
 
     producer.close()
 
+  }
+
+  val oncallback = new Callback {
+    override def onCompletion(recordMetadata: RecordMetadata, e: Exception) = {
+
+      println("--------------------------------------------")
+      println("Partition = " + recordMetadata.partition())
+      println("Offset = " + recordMetadata.offset())
+      println("Topic = " + recordMetadata.topic())
+
+    }
   }
 
 }
