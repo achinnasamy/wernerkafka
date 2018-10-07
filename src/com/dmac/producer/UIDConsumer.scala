@@ -15,7 +15,7 @@ object UIDConsumer {
     val props = new Properties()
     props.put("bootstrap.servers", "localhost:9092")
     // When changed the consumer group, it behaves as a TOPIC or QUEUE
-    props.put("group.id", "AWS-CONSUMER5")
+    props.put("group.id", "AWS-CONSUMER6")
     props.put("enable.auto.commit", "true")
     //props.put("auto.commit.interval.ms", "1000")
     props.put("session.timeout.ms", "30000")
@@ -28,12 +28,12 @@ object UIDConsumer {
     val consumer = new KafkaConsumer[String, String](props)
 
     // Consumer consuming from a Particular Topic
-    //consumer.subscribe(Arrays.asList("ZETA-ENGINE-TOPIC"))
+    consumer.subscribe(Arrays.asList("MONGODB-TOPIC"))
 
-    val partitionTwentyThree = new TopicPartition("KANDY-TOPIC", 23)
-    val partitionTwentyFour = new TopicPartition("KANDY-TOPIC", 24)
-    val partitionTwentyFive = new TopicPartition("KANDY-TOPIC", 25)
-    consumer.assign(Arrays.asList(partitionTwentyThree,partitionTwentyFour,partitionTwentyFive))
+//    val partitionTwentyThree = new TopicPartition("KANDY-TOPIC", 23)
+//    val partitionTwentyFour = new TopicPartition("KANDY-TOPIC", 24)
+//    val partitionTwentyFive = new TopicPartition("KANDY-TOPIC", 25)
+//    consumer.assign(Arrays.asList(partitionTwentyThree,partitionTwentyFour,partitionTwentyFive))
 
 
     while (true) {
@@ -42,8 +42,9 @@ object UIDConsumer {
 
       records.forEach(new ForEachPrintOutputReckoner)
 
+      //consumer.seekToBeginning()
       consumer.commitSync()
-      //consumer.commitAsync()
+      consumer.commitAsync()
 
     }
 

@@ -28,9 +28,7 @@ public class EchelonProducer {
 
         KafkaProducer producer = new KafkaProducer<String, String>(props);
 
-        ProducerRecord data = new ProducerRecord<String, String>("BASHAS", "sweektoend", "Richard Feynman 101 - thank you for your physics");
-
-
+        ProducerRecord data = new ProducerRecord<String, String>("ATOS2-TOPIC", "mongodb", "nosql");
 
         producer.send(data);
 

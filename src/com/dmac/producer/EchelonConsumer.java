@@ -33,7 +33,7 @@ public class EchelonConsumer {
 
         KafkaConsumer consumer = new KafkaConsumer<>(props);
 
-        consumer.subscribe(Arrays.asList("EWS"));
+        consumer.subscribe(Arrays.asList("ATOS2-TOPIC"));
 
 
 
