@@ -22,7 +22,7 @@ public class KTableProcessing {
 
         KTable data = builder.table(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
 
-        data.toStream().foreach((x,y) -> System.out.println("Key = " + x + " Value" + y));
+//        data.toStream().foreach((x,y) -> System.out.println("Key = " + x + " Value" + y));
 
         // Operations supported by KTable
         /*

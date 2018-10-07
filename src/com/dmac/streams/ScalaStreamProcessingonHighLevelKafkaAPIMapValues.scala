@@ -16,22 +16,45 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapValues {
 
     val builder = new StreamsBuilder()
 
-    val dataStream = builder.stream[String,String]("HDFS-TOPIC")
+    val dataStream = builder.stream[String,String]("ZETA-TOPIC")
 
 
 
-    val mappedDataStream = dataStream.mapValues(
+//    val mappedDataStream = dataStream.mapValues(
+//
+//      new ValueMapper[String, String] {
+//                          override def apply(value: String): String =
+//                            value.concat("__DATA_HAS_BEEN_MAPPED___")
+//      }
+//
+//    )
+
+//    val ibmStream = dataStream.mapValues(
+//
+//      new ValueMapper[String, String] {
+//        override def apply(value: String): String =
+//          value.concat("___IBM_PROCESSED___")
+//      }
+//
+//    )
+//
+    val auaDataStream = dataStream.mapValues(
 
       new ValueMapper[String, String] {
-                          override def apply(value: String): String =
-                            value.concat("__DATA_HAS_BEEN_MAPPED___")
+        override def apply(value: String): String = {
+          println(value)
+          val columns = value.split(",")
+          columns(3)
+        }
       }
 
     )
 
+//    ibmStream.to("IBM_PROCESSED_TOPIC")
+//
+//    mappedDataStream.to("MAPPED_HDFS_DATA_TOPIC")
 
-    mappedDataStream.to("MAPPED_HDFS_DATA_TOPIC")
-
+    auaDataStream.to("AUA-TOPIC")
 
     val topology = builder.build()
 

@@ -27,7 +27,7 @@ object ScalaStreamProcessingonHighLevelKafkaAPIGroupBy {
 
 
 
-¡
+
     val redisGroupedDataStream = dataStream.groupBy(new KeyValueMapper[String, String, String]() {
       override def apply(key: String, word: String): String = word
     })
