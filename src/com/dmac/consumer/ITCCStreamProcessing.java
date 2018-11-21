@@ -5,6 +5,7 @@ import com.dmac.streams.DataProcessSupplier;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
+import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.processor.TopologyBuilder;
 
 import java.util.Properties;
@@ -28,7 +29,7 @@ public class ITCCStreamProcessing {
         StreamsConfig config = new StreamsConfig(settings);
 
 
-        TopologyBuilder builder = new TopologyBuilder();
+        Topology builder = new Topology();
 
         builder.addSource("Source", "ANZ-TOPIC")
                 .addProcessor("CAPITAL-PROCESSOR",new DataProcessSupplier(), "Source")
