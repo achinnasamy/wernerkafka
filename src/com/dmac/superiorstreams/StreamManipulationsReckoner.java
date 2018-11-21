@@ -3,10 +3,9 @@ package com.dmac.superiorstreams;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
+import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
-import org.apache.kafka.streams.kstream.KStreamBuilder;
-
 import java.util.Properties;
 
 /**
@@ -16,10 +15,10 @@ public class StreamManipulationsReckoner {
 
     public static void main(String args[]) {
 
-        KStreamBuilder builder = new KStreamBuilder();
+        StreamsBuilder builder = new StreamsBuilder();
 
 
-        KStream data = builder.stream(Serdes.String(), Serdes.String(),"Squad-Topic");
+        KStream data = builder.stream("Squad-Topic");
 
         //KStream mappedValuesData = data.mapValues(each -> each.toString().toUpperCase());
         KStream mappedData = data.map(((key, value) -> new KeyValue<>(key.toString().toUpperCase(), value.toString().toUpperCase())));
@@ -66,7 +65,7 @@ public class StreamManipulationsReckoner {
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
 
 
-        KafkaStreams stream = new KafkaStreams(builder, props);
+        KafkaStreams stream = new KafkaStreams(builder.build(), props);
 
         stream.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override

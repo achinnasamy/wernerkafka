@@ -3,8 +3,8 @@ package com.dmac.streams;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
+import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.processor.StateStoreSupplier;
-import org.apache.kafka.streams.processor.TopologyBuilder;
 import org.apache.kafka.streams.state.Stores;
 
 import java.util.Properties;
@@ -38,7 +38,7 @@ public class LowLevelAPIStreamProcessing {
 //                .disableLogging() // disable backing up the store to a changelog topic
 //                .build();
 
-        TopologyBuilder builder = new TopologyBuilder();
+        Topology builder = new Topology();
         builder.addSource("Source", "DATASOURCE-TOPIC")
 
 

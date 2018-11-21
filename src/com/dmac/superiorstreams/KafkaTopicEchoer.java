@@ -3,10 +3,9 @@ package com.dmac.superiorstreams;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
+import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
-import org.apache.kafka.streams.kstream.KStreamBuilder;
-
 import java.util.Properties;
 
 /**
@@ -16,10 +15,10 @@ public class KafkaTopicEchoer {
 
     public static void main(String args[]) {
 
-        KStreamBuilder builder = new KStreamBuilder();
+        StreamsBuilder builder = new StreamsBuilder();
 
 
-        KStream data = builder.stream(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
+        KStream data = builder.stream("KTABLE-TOPIC");
 
 
         //data.mapValues();
@@ -28,7 +27,7 @@ public class KafkaTopicEchoer {
         data.to("DESTINATIONTOPIC");
 
 
-        KStream data3 = builder.stream(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
+        KStream data3 = builder.stream("KTABLE-TOPIC");
 
 
         //data3.mapValues();
@@ -47,7 +46,7 @@ public class KafkaTopicEchoer {
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
 
 
-        KafkaStreams stream = new KafkaStreams(builder, props);
+        KafkaStreams stream = new KafkaStreams(builder.build(), props);
 
 //        stream.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 //            @Override

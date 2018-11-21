@@ -2,9 +2,9 @@ package com.dmac.streams;
 
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
+import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
-import org.apache.kafka.streams.kstream.KStreamBuilder;
 import org.apache.kafka.streams.kstream.KTable;
 
 import java.util.Properties;
@@ -17,10 +17,10 @@ public class KTableProcessing {
     public static void main(String args[]) {
 
 
-        KStreamBuilder builder = new KStreamBuilder();
+        StreamsBuilder builder = new StreamsBuilder();
 
 
-        KTable data = builder.table(Serdes.String(), Serdes.String(),"KTABLE-TOPIC");
+        KTable data = builder.table("KTABLE-TOPIC");
 
 //        data.toStream().foreach((x,y) -> System.out.println("Key = " + x + " Value" + y));
 
@@ -45,7 +45,7 @@ public class KTableProcessing {
         props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 1000L);
 
 
-        KafkaStreams stream = new KafkaStreams(builder, props);
+        KafkaStreams stream = new KafkaStreams(builder.build(), props);
 
         stream.start();
 

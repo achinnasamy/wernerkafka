@@ -21,8 +21,8 @@ object DSLStreamMain {
 
 
     data.foreach(new Printer)
-    data.print()
-    data.writeAsText("")
+    //data.print()
+    //data.writeAsText("")
 
 
     val props = new Properties()

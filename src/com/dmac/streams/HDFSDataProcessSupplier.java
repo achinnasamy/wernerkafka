@@ -5,6 +5,8 @@ import org.apache.kafka.streams.kstream.Transformer;
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
 import org.apache.kafka.streams.processor.ProcessorSupplier;
+import org.apache.kafka.streams.processor.PunctuationType;
+import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.KeyValueStore;
 
 /**
@@ -32,8 +34,19 @@ class HDFSDataProcessor implements Processor<String, String> {
         this.processorContext = _processorContext;
         //kvStore = (KeyValueStore) _processorContext.getStateStore("DATA_STORE");
 
+
         // call the punctuate
-        this.processorContext.schedule(1000);
+        this.processorContext.schedule(1000, PunctuationType.STREAM_TIME, (timestamp) -> {
+            KeyValueIterator<String, String> iter = this.kvStore.all();
+            while (iter.hasNext()) {
+                KeyValue<String, String> entry = iter.next();
+                processorContext.forward(entry.key, entry.value.toString());
+            }
+            iter.close();
+
+            // commit the current processing progress
+            processorContext.commit();
+        });
 
     }
 
@@ -43,11 +56,6 @@ class HDFSDataProcessor implements Processor<String, String> {
         // Do complex processing and forward it to next topic
         processorContext.forward(key.concat("__HDFS_DATA__"), value.concat("__HDFS_DATA__"));
         //kvStore.put(key.toUpperCase(),value.toUpperCase());
-    }
-
-    @Override
-    public void punctuate(long l) {
-        processorContext.commit();
     }
 
     @Override
@@ -81,7 +89,17 @@ class RuleEngineProcessor implements Processor<String, String> {
         //kvStore = (KeyValueStore) _processorContext.getStateStore("LENGTH_STORE");
 
         // call the punctuate
-        this.processorContext.schedule(1000);
+        this.processorContext.schedule(1000, PunctuationType.STREAM_TIME, (timestamp) -> {
+            KeyValueIterator<String, String> iter = this.kvStore.all();
+            while (iter.hasNext()) {
+                KeyValue<String, String> entry = iter.next();
+                processorContext.forward(entry.key, entry.value.toString());
+            }
+            iter.close();
+
+            // commit the current processing progress
+            processorContext.commit();
+        });
 
     }
 
@@ -94,7 +112,6 @@ class RuleEngineProcessor implements Processor<String, String> {
         //kvStore.put(Integer.toString(key.length()), Integer.toString(value.length()));
     }
 
-    @Override
     public void punctuate(long l) {
         processorContext.commit();
     }
@@ -129,7 +146,17 @@ class ElasticSearchProcessor implements Processor<String, String> {
         //kvStore = (KeyValueStore) _processorContext.getStateStore("LENGTH_STORE");
 
         // call the punctuate
-        this.processorContext.schedule(1000);
+        this.processorContext.schedule(1000, PunctuationType.STREAM_TIME, (timestamp) -> {
+            KeyValueIterator<String, String> iter = this.kvStore.all();
+            while (iter.hasNext()) {
+                KeyValue<String, String> entry = iter.next();
+                processorContext.forward(entry.key, entry.value.toString());
+            }
+            iter.close();
+
+            // commit the current processing progress
+            processorContext.commit();
+        });
 
     }
 
@@ -142,7 +169,6 @@ class ElasticSearchProcessor implements Processor<String, String> {
         //kvStore.put(Integer.toString(key.length()), Integer.toString(value.length()));
     }
 
-    @Override
     public void punctuate(long l) {
         processorContext.commit();
     }
@@ -168,7 +194,6 @@ class RedisTransformer implements Transformer<String,String,KeyValue<String, Str
         return null;
     }
 
-    @Override
     public KeyValue<String, String> punctuate(long timestamp) {
         return null;
     }
