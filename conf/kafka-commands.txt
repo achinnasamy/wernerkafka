@@ -139,6 +139,18 @@ $ bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --gr
 Use the above commands to find out the details of the message that has been consumed by the consumer and the messages that have been produced by the producer.
 
 
+[25] GetOffsetShell
+
+./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic HDFS-TOPIC
+
+Output:
+
+HDFS-TOPIC:0:9
+
+For the HDFS-TOPIC and for Partition 0 there are 9 offset messages.
+
+
+
 
 
 
