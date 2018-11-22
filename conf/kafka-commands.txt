@@ -127,6 +127,18 @@
 
 [23] ./bin/kafka-run-class.sh org.apache.kafka.clients.producer.internals.ProducerMetrics > metrics.html
 
+[24] ConsumerOffsetChecker
+
+$ bin/kafka-run-class.sh kafka.tools.ConsumerOffsetChecker --zookeeper localhost:2181 --group AWS-CONSUMER3 --topic METROLINX-TOPIC
+
+[or]
+
+$ bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group AWS-CONSUMER3
+
+
+Use the above commands to find out the details of the message that has been consumed by the consumer and the messages that have been produced by the producer.
+
+
 
 
 
