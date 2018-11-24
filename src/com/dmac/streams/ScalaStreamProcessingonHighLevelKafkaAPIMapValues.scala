@@ -16,9 +16,7 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapValues {
 
     val builder = new StreamsBuilder()
 
-    val dataStream = builder.stream[String,String]("ZETA-TOPIC")
-
-
+    val dataStream = builder.stream[String,String]("HDFS-TOPIC")
 
 //    val mappedDataStream = dataStream.mapValues(
 //
@@ -29,32 +27,32 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapValues {
 //
 //    )
 
-//    val ibmStream = dataStream.mapValues(
-//
-//      new ValueMapper[String, String] {
-//        override def apply(value: String): String =
-//          value.concat("___IBM_PROCESSED___")
-//      }
-//
-//    )
-//
-    val auaDataStream = dataStream.mapValues(
+    val ibmStream = dataStream.mapValues(
 
       new ValueMapper[String, String] {
-        override def apply(value: String): String = {
-          println(value)
-          val columns = value.split(",")
-          columns(3)
-        }
+        override def apply(value: String): String =
+          value.concat("___IBM_PROCESSED___")
       }
 
     )
+//
+//    val auaDataStream = dataStream.mapValues(
+//
+//      new ValueMapper[String, String] {
+//        override def apply(value: String): String = {
+//          println(value)
+//          val columns = value.split(",")
+//          columns(3)
+//        }
+//      }
+//
+//    )
 
 //    ibmStream.to("IBM_PROCESSED_TOPIC")
 //
 //    mappedDataStream.to("MAPPED_HDFS_DATA_TOPIC")
 
-    auaDataStream.to("AUA-TOPIC")
+    ibmStream.to("IBM-TOPIC")
 
     val topology = builder.build()
 
@@ -63,12 +61,12 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapValues {
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
     props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName())
     props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName())
-    val config = new StreamsConfig(props)
+
 
     // Print the topology
     println(topology.describe())
 
-    val stream = new KafkaStreams(topology, config)
+    val stream = new KafkaStreams(topology, props)
 
     stream.start()
 

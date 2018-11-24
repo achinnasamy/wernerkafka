@@ -2,16 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd036f8b-1319-4457-a215-b80202e73d05" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamLowLevelKafkaAPIProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamHighLevelKafkaAPI.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/KafkaProducer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/KafkaProducer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/NZHighLevelStreamAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/NZHighLevelStreamAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmac/consumer/ITCCStreamProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/consumer/ITCCStreamProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/groupingoperations/GroupingOperations.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/groupingoperations/GroupingOperations.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/DataProcessSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/DataProcessSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/HDFSDataProcessSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/HDFSDataProcessSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/KTableProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/KTableProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/DataProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/DataProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/GlobalKTableProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/GlobalKTableProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonHighLevelKafkaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonHighLevelKafkaAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonLowLevelKafkaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonLowLevelKafkaAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmac/superiorstreams/KafkaTopicEchoer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/superiorstreams/KafkaTopicEchoer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmac/superiorstreams/StreamManipulationsReckoner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/superiorstreams/StreamManipulationsReckoner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werner-kafka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/werner-kafka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/ProcessorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/ProcessorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPI.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPI.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapValues.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapValues.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/streams/WindowingExample.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmac/streams/WindowingExample.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,50 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DataProcessSupplier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/DataProcessSupplier.java">
+      <file leaf-file-name="JavaStreamLowLevelKafkaAPIProcessor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/JavaStreamLowLevelKafkaAPIProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ITCCStreamProcessing.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/ITCCStreamProcessing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
-              <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScalaStreamProcessingonHighLevelKafkaAPIGroupBy.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIGroupBy.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScalaStreamProcessingonHighLevelKafkaAPI.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPI.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KafkaTopicEchoer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/superiorstreams/KafkaTopicEchoer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="18" column="42" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -77,52 +48,7 @@
       <file leaf-file-name="HDFSDataProcessSupplier.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/HDFSDataProcessSupplier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StreamManipulationsReckoner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/superiorstreams/StreamManipulationsReckoner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="67" column="62" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProcessorContext.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../bin/kafka211200/libs/kafka-streams-2.0.0.jar!/org/apache/kafka/streams/processor/ProcessorContext.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KTableProcessing.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/KTableProcessing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LowLevelAPIStreamProcessing.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
+            <state relative-caret-position="-780">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -147,48 +73,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/dmac/streams/WindowingExample.scala" />
         <option value="$PROJECT_DIR$/src/com/dmac/consumer/KafkaConsumerConsumeDataFromAPartition.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/producer/KafkaProducerSendDataToParticularPartition.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/zoo/ZookeeperManager.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/consumer/AuthMessage.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/consumer/AuthMessageSerializer.java" />
-        <option value="$PROJECT_DIR$/src/com/dmac/streams/ProcessorMain.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/ANZConsumerRouting.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/producer/MultipleConsumers.java" />
-        <option value="$PROJECT_DIR$/src/com/dmac/groupingoperations/GroupingOperations.scala" />
         <option value="$PROJECT_DIR$/src/com/dmac/ZHighLevelConsumer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/producer/EchelonProducer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/producer/UIDProducer.scala" />
         <option value="$PROJECT_DIR$/src/com/dmac/KafkaConsumer.scala" />
-        <option value="$PROJECT_DIR$/src/com/dmac/KafkaProducer.scala" />
-        <option value="$PROJECT_DIR$/src/com/dmac/NZHighLevelStreamAPI.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/consumer/valandvar.scala" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/TopicPartitionMetadata.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/UnisysJavaKafkaConsumer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/UnisysJavaKafkaProducer.java" />
-        <option value="$PROJECT_DIR$/src/com/dmac/streams/DataProcessor.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/ANZKafkaProducer.scala" />
         <option value="$PROJECT_DIR$/src/com/dmac/ANZConsumer.scala" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/KafkaJavaProducer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/WalmartJavaConsumer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/WalmartKafkaJavaProducer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/javapc/KafkaJavaConsumer.java" />
-        <option value="$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala" />
-        <option value="$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/superiorstreams/StreamManipulationsReckoner.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/streams/KTableProcessing.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/superiorstreams/KafkaTopicEchoer.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/streams/HDFSDataProcessSupplier.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonLowLevelKafkaAPI.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/KafkaProducer.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/groupingoperations/GroupingOperations.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/WindowingExample.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonHighLevelKafkaAPI.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/ProcessorMain.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/GlobalKTableProcessing.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/DataProcessor.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/streams/DataProcessSupplier.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java" />
         <option value="$PROJECT_DIR$/src/com/dmac/consumer/ITCCStreamProcessing.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/NZHighLevelStreamAPI.java" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPI.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamHighLevelKafkaAPI.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapValues.scala" />
+        <option value="$PROJECT_DIR$/src/com/dmac/streams/JavaStreamLowLevelKafkaAPIProcessor.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="646" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -246,22 +180,6 @@
               <item name="wernerkafka" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dmac" type="462c0819:PsiDirectoryNode" />
-              <item name="streams" type="462c0819:PsiDirectoryNode" />
-              <item name="DataProcessSupplier.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="werner-kafka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wernerkafka" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dmac" type="462c0819:PsiDirectoryNode" />
-              <item name="streams" type="462c0819:PsiDirectoryNode" />
-              <item name="HDFSDataProcessSupplier.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="werner-kafka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wernerkafka" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dmac" type="462c0819:PsiDirectoryNode" />
               <item name="superiorstreams" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -281,14 +199,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/kafka211200/libs" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4396853" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dmac.streams" />
       <recent name="com.dmac.javapc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/dmac/streams" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -303,50 +225,50 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WalmartKafkaJavaProducer">
+  <component name="RunManager" selected="Application.JavaStreamLowLevelKafkaAPIProcessor">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="KafkaJavaProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dmac.javapc.KafkaJavaProducer" />
+    <configuration name="JavaStreamLowLevelKafkaAPIProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dmac.streams.JavaStreamLowLevelKafkaAPIProcessor" />
       <module name="werner-kafka" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dmac.javapc.*" />
+          <option name="PATTERN" value="com.dmac.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
-    <configuration name="UnisysJavaKafkaConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dmac.javapc.UnisysJavaKafkaConsumer" />
+    <configuration name="JavaStreamProcessingonLowLevelKafkaAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dmac.streams.JavaStreamProcessingonLowLevelKafkaAPI" />
       <module name="werner-kafka" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dmac.javapc.*" />
+          <option name="PATTERN" value="com.dmac.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
-    <configuration name="UnisysJavaKafkaProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dmac.javapc.UnisysJavaKafkaProducer" />
+    <configuration name="ScalaStreamHighLevelKafkaAPI" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.dmac.superiorstreams.ScalaStreamHighLevelKafkaAPI" />
       <module name="werner-kafka" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dmac.javapc.*" />
+          <option name="PATTERN" value="com.dmac.superiorstreams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
-    <configuration name="WalmartJavaConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dmac.javapc.WalmartJavaConsumer" />
+    <configuration name="ScalaStreamProcessingonHighLevelKafkaAPIMapValues" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.dmac.streams.ScalaStreamProcessingonHighLevelKafkaAPIMapValues" />
       <module name="werner-kafka" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dmac.javapc.*" />
+          <option name="PATTERN" value="com.dmac.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -459,19 +381,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="Application.KafkaJavaProducer" />
-      <item itemvalue="Application.UnisysJavaKafkaProducer" />
-      <item itemvalue="Application.UnisysJavaKafkaConsumer" />
       <item itemvalue="Application.WalmartKafkaJavaProducer" />
-      <item itemvalue="Application.WalmartJavaConsumer" />
+      <item itemvalue="Application.JavaStreamProcessingonLowLevelKafkaAPI" />
+      <item itemvalue="Application.ScalaStreamHighLevelKafkaAPI" />
+      <item itemvalue="Application.ScalaStreamProcessingonHighLevelKafkaAPIMapValues" />
+      <item itemvalue="Application.JavaStreamLowLevelKafkaAPIProcessor" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JavaStreamLowLevelKafkaAPIProcessor" />
+        <item itemvalue="Application.ScalaStreamProcessingonHighLevelKafkaAPIMapValues" />
+        <item itemvalue="Application.ScalaStreamHighLevelKafkaAPI" />
+        <item itemvalue="Application.JavaStreamProcessingonLowLevelKafkaAPI" />
         <item itemvalue="Application.WalmartKafkaJavaProducer" />
-        <item itemvalue="Application.WalmartJavaConsumer" />
-        <item itemvalue="Application.UnisysJavaKafkaConsumer" />
-        <item itemvalue="Application.UnisysJavaKafkaProducer" />
-        <item itemvalue="Application.KafkaJavaProducer" />
       </list>
     </recent_temporary>
   </component>
@@ -489,19 +411,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="810" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="810" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32805756" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.05422315" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42302158" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34978542" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29470673" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
@@ -514,31 +438,29 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32846716" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34978542" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29470673" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.05422315" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42302158" />
       <window_info id="Image Layers" order="7" />
       <window_info id="Designer" order="4" />
       <window_info anchor="right" id="Properties" order="5" />
       <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -546,8 +468,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32846716" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32805756" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
@@ -560,74 +482,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/ANZConsumerRouting.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ProcessorMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/KafkaConsumerConsumeDataFromAPartition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/producer/KafkaProducerSendDataToParticularPartition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/StreamProcessing.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/producer/MultipleConsumers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="53" column="46" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/ZHighLevelConsumer.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/groupingoperations/GroupingOperations.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../bin/kafka21101100/libs/kafka-streams-0.11.0.0.jar!/org/apache/kafka/streams/kstream/KStream.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/KafkaUserCustomPartitioner.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/AuthMessageSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/UsingCustomKafkaPartitioner.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../bin/kafka21101100/libs/kafka-clients-0.11.0.0.jar!/org/apache/kafka/clients/consumer/ConsumerConfig.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/producer/EchelonProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../bin/kafka21101100/libs/kafka-clients-0.11.0.0.jar!/org/apache/kafka/clients/producer/ProducerRecord.class" />
     <entry file="file://$PROJECT_DIR$/src/com/dmac/producer/EchelonConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -644,25 +498,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/ITCStreamProcessing.scala" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/NZHighLevelStreamAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/valandvar.scala" />
     <entry file="file://$PROJECT_DIR$/src/com/dmac/package.scala" />
     <entry file="jar://$PROJECT_DIR$/../../bin/kafka21101100/libs/kafka-clients-0.11.0.0.jar!/org/apache/kafka/clients/consumer/KafkaConsumer.class" />
     <entry file="jar://$PROJECT_DIR$/../../bin/jdk8/src.zip!/java/util/function/Consumer.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dmac/javapc/UnisysJavaConsumer.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/KafkaProducer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="87" column="14" lean-forward="true" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dmac/javapc/UnisysJavaKafkaConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -674,13 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/DataProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -747,16 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="e#34#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dmac/producer/UIDConsumer.scala">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -774,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPI.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIGroupBy.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
@@ -788,30 +604,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../bin/kafka211200/libs/kafka-streams-2.0.0.jar!/org/apache/kafka/streams/processor/ProcessorContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/superiorstreams/StreamManipulationsReckoner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="67" column="62" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -835,27 +631,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/HDFSDataProcessSupplier.java">
+    <entry file="jar://$PROJECT_DIR$/../../bin/kafka211200/libs/kafka-streams-2.0.0.jar!/org/apache/kafka/streams/KafkaStreams.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
+        <state relative-caret-position="5288">
+          <caret line="250" column="11" selection-start-line="250" selection-start-column="11" selection-end-line="250" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/KafkaProducer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../bin/kafka211200/libs/kafka-streams-scala_2.11-2.0.0.jar!/org/apache/kafka/streams/scala/StreamsBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/groupingoperations/GroupingOperations.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-862">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="e#37#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ProcessorMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="54" lean-forward="true" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#1789#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/GlobalKTableProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="7" column="49" lean-forward="true" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/DataProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="16" column="13" lean-forward="true" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/WindowingExample.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="27" column="81" selection-start-column="2" selection-end-line="99" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/DataProcessSupplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="18" column="3" lean-forward="true" selection-start-column="2" selection-end-line="69" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/LowLevelAPIStreamProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="43" lean-forward="true" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/ITCCStreamProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="18" lean-forward="true" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/NZHighLevelStreamAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/superiorstreams/StreamManipulationsReckoner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="67" column="62" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/DataProcessSupplier.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/superiorstreams/DSLStreamMain.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        <state relative-caret-position="458">
+          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dmac/consumer/ITCCStreamProcessing.java">
+    <entry file="jar://$PROJECT_DIR$/../../bin/kafka211200/libs/kafka-streams-2.0.0.jar!/org/apache/kafka/streams/kstream/ForeachAction.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+        <state relative-caret-position="120">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../bin/kafka211200/libs/kafka-streams-scala_2.11-2.0.0.jar!/org/apache/kafka/streams/scala/kstream/KStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamHighLevelKafkaAPI.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#34#87#0" expanded="true" />
+            <element signature="e#478#524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPI.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3990">
+          <caret line="139" column="26" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/ScalaStreamProcessingonHighLevelKafkaAPIMapValues.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="59" column="49" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="49" />
+          <folding>
+            <element signature="e#26#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonLowLevelKafkaAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/JavaStreamProcessingonHighLevelKafkaAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/HDFSDataProcessSupplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dmac/streams/JavaStreamLowLevelKafkaAPIProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="42" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="84" />
         </state>
       </provider>
     </entry>

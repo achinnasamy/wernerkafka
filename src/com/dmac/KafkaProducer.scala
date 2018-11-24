@@ -9,7 +9,7 @@ import org.xerial.snappy.Snappy
 /**
   * Created by dharshekthvel on 2/8/17.
   */
-object KafkaProducer {
+object KafkaProducer1 {
 
 
   def main(args : Array[String]) = {

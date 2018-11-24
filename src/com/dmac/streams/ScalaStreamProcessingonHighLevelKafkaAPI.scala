@@ -81,12 +81,12 @@ object ScalaStreamProcessingonHighLevelKafkaAPI {
     })
 
 
-    import scala.collection.JavaConverters._
-    dataStream.flatMapValues[String]( new ValueMapper[String, java.lang.Iterable[java.lang.String]]() {
-      override def apply(value: String): java.lang.Iterable[java.lang.String] = {
-              value.toLowerCase.split("\\W+").toIterable.asJava
-      }
-    })
+//    import scala.collection.JavaConverters._
+//    dataStream.flatMapValues[String]( new ValueMapper[String, java.lang.Iterable[java.lang.String]]() {
+//      override def apply(value: String): java.lang.Iterable[java.lang.String] = {
+//              value.toLowerCase.split("\\W+").toIterable.asJava
+//      }
+//    })
     // Works only with Scala 2.12
     //dataStream.flatMapValues((value: String) =>  value.toLowerCase.split("\\W+").toIterable.asJava)
 
@@ -144,12 +144,11 @@ object ScalaStreamProcessingonHighLevelKafkaAPI {
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
     props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName())
     props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName())
-    val config = new StreamsConfig(props)
 
     // Print the topology
     println(topology.describe())
 
-    val stream = new KafkaStreams(topology, config)
+    val stream = new KafkaStreams(topology, props)
 
     stream.start()
 

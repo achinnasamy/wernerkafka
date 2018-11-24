@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * Created by dharshekthvel on 25/8/17.
  */
-public class JavaStreamProcessingonLowLevelKafkaAPI {
+public class JavaStreamLowLevelKafkaAPIProcessor {
 
     public static void main(String args[]) {
 
@@ -29,12 +29,8 @@ public class JavaStreamProcessingonLowLevelKafkaAPI {
         topology.addSource("Source", "HDFS-TOPIC")
 
                 .addProcessor("DATA-CLEANSING-PROCESSOR",new HDFSDataProcessSupplier(), "Source")
-                .addProcessor("RULE-ENGINE-PROCESSOR",new RuleEngineSupplier(), "DATA-CLEANSING-PROCESSOR")
-                .addProcessor("ES-ENGINE-PROCESSOR",new ElasticSearchSupplier(), "RULE-ENGINE-PROCESSOR")
 
-                .addSink("DataCleansedSink","DATA-CLEANSED-TOPIC", "DATA-CLEANSING-PROCESSOR")
-                .addSink("RuleEngineSink","RULE-ENGINE-TOPIC", "RULE-ENGINE-PROCESSOR")
-                .addSink("ESSink","ES-TOPIC", "ES-ENGINE-PROCESSOR");
+                .addSink("DataCleansedSink","DATA-CLEANSED-TOPIC", "DATA-CLEANSING-PROCESSOR");
 
 
         KafkaStreams streams = new KafkaStreams(topology, settings);

@@ -46,12 +46,12 @@ object ScalaStreamProcessingonHighLevelKafkaAPIMapAndFilter {
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
     props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName())
     props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName())
-    val config = new StreamsConfig(props)
+
 
     // Print the topology
     println(topology.describe())
 
-    val stream = new KafkaStreams(topology, config)
+    val stream = new KafkaStreams(topology, props)
 
     stream.start()
 

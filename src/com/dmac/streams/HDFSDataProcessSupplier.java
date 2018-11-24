@@ -37,12 +37,12 @@ class HDFSDataProcessor implements Processor<String, String> {
 
         // call the punctuate
         this.processorContext.schedule(1000, PunctuationType.STREAM_TIME, (timestamp) -> {
-            KeyValueIterator<String, String> iter = this.kvStore.all();
-            while (iter.hasNext()) {
-                KeyValue<String, String> entry = iter.next();
-                processorContext.forward(entry.key, entry.value.toString());
-            }
-            iter.close();
+//            KeyValueIterator<String, String> iter = this.kvStore.all();
+//            while (iter.hasNext()) {
+//                KeyValue<String, String> entry = iter.next();
+//                processorContext.forward(entry.key, entry.value.toString());
+//            }
+//            iter.close();
 
             // commit the current processing progress
             processorContext.commit();
