@@ -83,6 +83,14 @@
 
 [18]    Describe about the consumer
         ./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group AWS-CONSUMER4 --describe
+	
+	
+	./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group console-consumer-76374 --describe
+
+TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                     HOST            CLIENT-ID
+DATUM-TOPIC     3          0               0               0               consumer-1-523c6f30-a236-46c0-a81b-c69bf6092122 /192.168.1.100  consumer-1
+DATUM-TOPIC     11         1               1               0               consumer-1-523c6f30-a236-46c0-a81b-c69bf6092122 /192.168.1.100  consumer-1
+DATUM-TOPIC     19         2               2               0               consumer-1-523c6f30-a236-46c0-a81b-c69bf6092122 /192.168.1.100  consumer-1
 
 [19]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
 
