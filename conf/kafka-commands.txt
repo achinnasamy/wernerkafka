@@ -83,6 +83,14 @@
 
 [18]    Describe about the consumer
         ./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group AWS-CONSUMER4 --describe
+	
+	
+	./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group console-consumer-76374 --describe
+
+TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                     HOST            CLIENT-ID
+DATUM-TOPIC     3          0               0               0               consumer-1-523c6f30-a236-46c0-a81b-c69bf6092122 /192.168.1.100  consumer-1
+DATUM-TOPIC     11         1               1               0               consumer-1-523c6f30-a236-46c0-a81b-c69bf6092122 /192.168.1.100  consumer-1
+DATUM-TOPIC     19         2               2               0               consumer-1-523c6f30-a236-46c0-a81b-c69bf6092122 /192.168.1.100  consumer-1
 
 [19]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
         [or]
@@ -131,6 +139,30 @@
     ./kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --list --topic FARM-TOPIC
 
 [23] ./bin/kafka-run-class.sh org.apache.kafka.clients.producer.internals.ProducerMetrics > metrics.html
+
+[24] ConsumerOffsetChecker
+
+$ bin/kafka-run-class.sh kafka.tools.ConsumerOffsetChecker --zookeeper localhost:2181 --group AWS-CONSUMER3 --topic METROLINX-TOPIC
+
+[or]
+
+$ bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group AWS-CONSUMER3
+
+
+Use the above commands to find out the details of the message that has been consumed by the consumer and the messages that have been produced by the producer.
+
+
+[25] GetOffsetShell
+
+./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic HDFS-TOPIC
+
+Output:
+
+HDFS-TOPIC:0:9
+
+For the HDFS-TOPIC and for Partition 0 there are 9 offset messages.
+
+
 
 
 [24] To know about the settings and configurations for the brokers, topics and users
