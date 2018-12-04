@@ -32,12 +32,12 @@
 
 [9]  	./kafka-console-producer.sh --broker-list localhost:9092 --topic HDFS-TOPIC
         [OR]
-        ./kafka-console-producer.sh --broker-list localhost:9092 --topic HDFS-TOPIC --property parse.key=true --property key.separator=:
+        ./kafka-console-producer.sh --broker-list localhost:9092 --topic SLZ-TOPIC --property parse.key=true --property key.separator=:
 
 
 [10] 	./kafka-console-consumer.sh --bootstrap-server  localhost:9092 --topic MAPPED_HDFS_DATA_TOPIC --from-beginning
         [OR]
-        ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic MAPPED_HDFS_DATA_TOPIC --property print.key=true --property key.separator="  ---   " --from-beginning
+        ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic SLZ-TOPIC --property print.key=true --property key.separator="  ---   " --from-beginning
 
 
 
@@ -77,7 +77,7 @@
         ./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
 
 [17]    Reading a segment file
-        ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/dharshekth-kafka/MESH_TOPIC-1/00000000000000000000.log
+        ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/SLZ-TOPIC-1/00000000000000000000.log
         ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/KANDY-TOPIC-23/00000000000000000000.timeindex
         ./kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/KANDY-TOPIC-23/00000000000000000000.index
 
