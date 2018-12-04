@@ -85,6 +85,11 @@
         ./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group AWS-CONSUMER4 --describe
 
 [19]	kafka-reassign-partitions.sh --zookeeper localhost:2181 --topics-to-move-json-file topics-to-move.json --broker-list "1" --generate
+        [or]
+
+        Increasing the partitions for a topic:
+        ./kafka-topics.sh --alter --zookeeper localhost:2181 --topic BLOCK-TOPIC --partitions 4
+
 
 [20]    echo "exclude.internal.topics=false" > consumer.config
         /kafka-console-consumer.sh --consumer.config consumer.config --formatter "kafka.coordinator.group.GroupMetadataManager\$OffsetsMessageFormatter" --bootstrap-server localhost:9092 --topic __consumer_offsets
@@ -127,6 +132,20 @@
 
 [23] ./bin/kafka-run-class.sh org.apache.kafka.clients.producer.internals.ProducerMetrics > metrics.html
 
+
+[24] To know about the settings and configurations for the brokers, topics and users
+
+        ./kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --describe
+
+
+[25] Performance Test
+
+        ./kafka-producer-perf-test.sh --topic BLOCK-TOPIC --num-records 50 --throughput 10 --producer-props bootstrap.servers=localhost:9092 key.serializer=org.apache.kafka.common.serialization.StringSerializer value.serializer=org.apache.kafka.common.serialization.StringSerializer --record-size 1
+
+
+
+        ./kafka-consumer-perf-test.sh --messages 1000 --broker-list=localhost:9092 --topic BLOCK-TOPIC --group group_name  --num-fetch-threads 10
+        
 
 
 
