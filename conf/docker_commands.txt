@@ -7,8 +7,10 @@ Lists all the images
 [2] $ docker images -f dangling=true
 Shows all the images that are not having a tag name.
 
-[3] $ docker build --tag="pyspark-docker" docker_images
-Build a docker image from a docker file.
+[3] Build a docker image from a docker file.
+$ docker build --tag="pyspark-docker" docker_images
+$ docker build --tag="bigchaindbtag" bigchaindb
+
 
 [4] $ docker build -f /path_to/docker_file
 Build a docker file that is anywhere in the file system.
