@@ -1,49 +1,44 @@
 Docker Commands
 
 
-$ docker images
+[1] $ docker images
 Lists all the images
 
-$ docker images -f dangling=true
+[2] $ docker images -f dangling=true
 Shows all the images that are not having a tag name.
 
-$ docker build --tag="pyspark-docker" docker_images
+[3] $ docker build --tag="pyspark-docker" docker_images
 Build a docker image from a docker file.
 
-$ docker build -f /path_to/docker_file
+[4] $ docker build -f /path_to/docker_file
 Build a docker file that is anywhere in the file system.
 
-$ docker rmi <<image_id>>
+[5] $ docker rmi <<image_id>>
 Remove an image
 
-$ docker --version
+[6] $ docker --version
 Retrieves the version of the docker
 
-$ docker stats
+[7] $ docker stats
 Lists all the running containers
 
-
-$ docker system prune
+[8] $ docker system prune
 Docker provides a single command that will clean up any resources — images, containers, volumes, and networks — that are dangling (not associated with a container)
 
-$ docker system prune -a
+[9] $ docker system prune -a
 To additionally remove any stopped containers and all unused images (not just dangling images), add the -a flag to the command.
 
-
-
-$ docker run -it pyspark-docker bash
+[10] $ docker run -it pyspark-docker bash
 To login in into the image as a ssh shell. Bash shell into the pyspark-docker image.
 
-$ docker ps - list the running containers
+[11] $ docker ps - list the running containers
 
 
-
-$ docker ps -a 
+[12] $ docker ps -a 
 List all the containers that have been stopped also.
 
 
-
-$ docker rm <<container_id>> 
+[13] $ docker rm <<container_id>> 
 To remove a container
 
 
