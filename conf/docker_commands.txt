@@ -1,0 +1,18 @@
+Docker Commands
+
+
+[1]
+To remove all containers and images you can run these commands
+docker rm $(docker ps -a -q) docker rmi $(docker images -q)
+
+
+
+docker kill [container]: Kill a particular container.
+docker kill $(docker ps -q): Kill all containers that are currently running.
+docker rm [container]: Delete a particular container that is not currently running.
+docker rm $(docker ps -a -q): Delete all containers that are not currently running.
+
+
+
+[] Creating a docker file - Dockerfile -  Commands
+
