@@ -44,18 +44,36 @@ List all the containers that have been stopped also.
 To remove a container
 
 
-[1]
+[14]
 To remove all containers and images you can run these commands
 docker rm $(docker ps -a -q) docker rmi $(docker images -q)
 
 
-
+[15]
 docker kill [container]: Kill a particular container.
 docker kill $(docker ps -q): Kill all containers that are currently running.
 docker rm [container]: Delete a particular container that is not currently running.
 docker rm $(docker ps -a -q): Delete all containers that are not currently running.
 
 
+
+[16] Blockchain
+Install bigchaindb(BigChainDB) - For Installing bigchaindb run the below two commands
+
+$ docker pull bigchaindb/bigchaindb:all-in-one
+
+$ docker run \
+  --detach \
+  --name bigchaindb \
+  --publish 9984:9984 \
+  --publish 9985:9985 \
+  --publish 27017:27017 \
+  --publish 26657:26657 \
+  --volume $HOME/bigchaindb_docker/mongodb/data/db:/data/db \
+  --volume $HOME/bigchaindb_docker/mongodb/data/configdb:/data/configdb \
+  --volume $HOME/bigchaindb_docker/tendermint:/tendermint \
+  bigchaindb/bigchaindb:all-in-one
+  
 
 [] Creating a docker file - Dockerfile -  Commands
 
