@@ -73,7 +73,10 @@ $ docker run \
   --volume $HOME/bigchaindb_docker/mongodb/data/configdb:/data/configdb \
   --volume $HOME/bigchaindb_docker/tendermint:/tendermint \
   bigchaindb/bigchaindb:all-in-one
-  
+
+
+[] To install apache zeppelin as docker run the below command
+$ docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.8.2
 
 [] Creating a docker file - Dockerfile -  Commands
 
