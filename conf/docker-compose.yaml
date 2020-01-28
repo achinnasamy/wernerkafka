@@ -1,0 +1,39 @@
+version: '3.3'
+
+networks:
+  nw1:
+  nw2:
+
+services:
+  mycompdb:
+    image: mysql:5.7
+    container_name: mycompdb
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - nw1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: mywordpress
+      MYSQL_USER: mywordpress
+      MYSQL_PASSWORD: mywordpress
+
+  mywordpress:
+    depends_on:
+      - mycompdb
+    image: wordpress:latest
+    ports:
+      - 8000:80
+    networks:
+      - nw1
+      - nw2
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mycompdb:3306
+      WORDPRESS_DB_USER: mywordpress
+      WORDPRESS_DB_PASSWORD: mywordpress
+      WORDPRESS_DB_NAME: mywordpress
+
+volumes:
+  db_data: {}
