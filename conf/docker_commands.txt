@@ -18,6 +18,9 @@ Build a docker file that is anywhere in the file system.
 [5] $ docker rmi <<image_id>>
 Remove an image
 
+$ docker rmi -f <<image_id>>
+To force remove an image
+
 [6] $ docker --version
 Retrieves the version of the docker
 
