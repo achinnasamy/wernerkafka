@@ -92,3 +92,23 @@ $ docker run -d --name mysql-employees -p 3306:3306 -e MYSQL_ROOT_PASSWORD=colle
 
 
 
+[] Docker Machine
+
+$ brew install docker docker-machine 
+$ brew cask install virtualbox
+
+-> need password
+-> possibly need to address System Preference setting 
+$ docker-machine create --driver virtualbox default 
+$ docker-machine env default 
+$ eval "$(docker-machine env default)" 
+$ docker run hello-world 
+$ docker-machine stop default
+
+Ref: https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
+
+
+
+
+
+
