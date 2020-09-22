@@ -109,6 +109,38 @@ Ref: https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-
 
 
 
+Kubernetes Commands
+
+[1] kubectl create ns all-monitoring
+
+
+newrelic-bundle-kube-state-metrics                                     21m
+newrelic-bundle-newrelic-infrastructure                                21m
+newrelic-bundle-newrelic-logging                                       21m
+newrelic-bundle-nri-kube-events                                        21m
+newrelic-bundle-nri-metadata-injection                                 21m
+newrelic-bundle-nri-prometheus                                         21m
+
+kubectl delete clusterrole newrelic-bundle-kube-state-metrics
+kubectl delete clusterrole newrelic-bundle-newrelic-infrastructure
+kubectl delete clusterrole newrelic-bundle-newrelic-logging
+kubectl delete clusterrole newrelic-bundle-nri-kube-events
+kubectl delete clusterrole newrelic-bundle-nri-metadata-injection
+kubectl delete clusterrole newrelic-bundle-nri-prometheus
+
+
+kubectl delete clusterrolebinding newrelic-bundle-kube-state-metrics
+kubectl delete clusterrolebinding newrelic-bundle-newrelic-infrastructure
+kubectl delete clusterrolebinding newrelic-bundle-newrelic-logging
+kubectl delete clusterrolebinding newrelic-bundle-nri-kube-events
+kubectl delete clusterrolebinding newrelic-bundle-nri-metadata-injection
+kubectl delete clusterrolebinding newrelic-bundle-nri-prometheus
+
+kubectl delete mutatingwebhookconfiguration newrelic-bundle-nri-metadata-injection
+
+
+
+
 
 
 
