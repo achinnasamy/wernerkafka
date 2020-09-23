@@ -112,7 +112,7 @@ Ref: https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-
 Kubernetes Commands
 
 [1] kubectl create ns all-monitoring
-
+kubectl delete ns all-monitor
 
 newrelic-bundle-kube-state-metrics                                     21m
 newrelic-bundle-newrelic-infrastructure                                21m
