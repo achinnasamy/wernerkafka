@@ -130,6 +130,10 @@ Kubernetes Commands
 $ kubectl get hpa
 
 
+[] Run a busy box
+$ kubectl run -i -tty load-generator --image=busybox /bin/sh
+
+
 newrelic-bundle-kube-state-metrics                                     21m
 newrelic-bundle-newrelic-infrastructure                                21m
 newrelic-bundle-newrelic-logging                                       21m
