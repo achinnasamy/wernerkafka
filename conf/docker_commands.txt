@@ -107,12 +107,27 @@ $ docker-machine stop default
 
 Ref: https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
 
-
+********************************************************************************************************************************************
+********************************************************************************************************************************************
+********************************************************************************************************************************************
+                                                                Kubernetes
+********************************************************************************************************************************************
+********************************************************************************************************************************************
+********************************************************************************************************************************************
 
 Kubernetes Commands
 
-[1] kubectl create ns all-monitoring
-kubectl delete ns all-monitor
+[1] Create a namespace 
+    $ kubectl create ns all-monitoring
+
+[2] Delete a namespace
+    $ kubectl delete ns all-monitor
+
+[3] Change the default namespace from default to viasocket
+    $ kubectl config set-context --current --namespace=viasocket
+    
+[4] 
+
 
 newrelic-bundle-kube-state-metrics                                     21m
 newrelic-bundle-newrelic-infrastructure                                21m
