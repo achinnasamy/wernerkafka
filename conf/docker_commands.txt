@@ -126,7 +126,8 @@ Kubernetes Commands
 [3] Change the default namespace from default to viasocket
     $ kubectl config set-context --current --namespace=viasocket
     
-[4] 
+[4] Get details about hpa (Horizontal Pod Autoscaling)
+$ kubectl get hpa
 
 
 newrelic-bundle-kube-state-metrics                                     21m
