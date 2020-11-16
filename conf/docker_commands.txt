@@ -160,7 +160,108 @@ kubectl delete mutatingwebhookconfiguration newrelic-bundle-nri-metadata-injecti
 
 
 
+****************************************************************************************************************************************
+Hive Commands
+****************************************************************************************************************************************
 
+
+create database warehousetwitter;
+
+show databases;
+
+use warehousetwitter;
+
+CREATE EXTERNAL TABLE TWITTER_DATA(id STRING,data STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/siva';
+
+
+INSERT INTO TWITTER_DATA("11101", "tweet me")
+
+CREATE EXTERNAL TABLE AUTH_TABLE_DATA(aua STRING,sa STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/';
+
+INSERT INTO AUTH_TABLE_DATA("11101", "REF")
+SELECT * FROM `default`.`auth_table_data` LIMIT 100;
+
+
+CREATE TABLE AUTH_DETAIL(aua STRING,sa STRING,res_dist_name STRING, res_state_code STRING, res_state_name STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/test';
+
+CREATE TABLE AUTH_DATA(aua STRING,sa STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/vishal/data';
+
+SELECT * FROM `default`.`auth_data` LIMIT 100;
+
+describe tanner
+
+select count(*) from tanner;
+select count(*) from auth_detail
+
+LOAD data <LOCAL> inpath <file path> into table [tablename]
+
+hive ‐e 'select a.col from tab1 a'
+
+select aua, count(*) from auth_detail group by aua
+select * from auth_detail order by aua
+select * from auth_detail sort by res_state_code
+
+INSERT OVERWRITE DIRECTORY '/test/data' select res_state_code from auth_detail sort by res_state_code
+INSERT OVERWRITE DIRECTORY '/test/dataparquet' STORED AS PARQUET select res_state_code from auth_detail sort by res_state_code
+
+GROUP BY,  ORDER BY, SORT BY
+
+Expressions in WHERE and HAVING
+
+
+
+Creating a database CREATE DATABASE datamart;   				CREATE DATABASE datamart;
+
+
+Selecting a database 							USE datamart;
+
+Listing databases SHOW DATABASES; SHOW DATABASES;
+
+Listing tables in a database SHOW TABLES; SHOW TABLES;
+
+Describing the format of a table DESCRIBE table; DESCRIBE (FORMATTED|EXTENDED) table;
+
+
+Dropping a database DROP DATABASE db_name; DROP DATABASE db_name (CASCADE);
+
+
+Retrieving information SELECT from_columns FROM table WHERE conditions; SELECT from_columns FROM table WHERE conditions;
+
+All values SELECT * FROM table; SELECT * FROM table;
+Some values SELECT * FROM table WHERE rec_name = “value”; SELECT * FROM table WHERE rec_name = "value";
+Multiple criteria SELECT * FROM table WHERE rec1=”value1” AND
+rec2=”value2”;
+SELECT * FROM TABLE WHERE rec1 = "value1" AND 
+rec2 = "value2";
+Selecting specific columns SELECT column_name FROM table; SELECT column_name FROM table;
+Retrieving unique output records SELECT DISTINCT column_name FROM table; SELECT DISTINCT column_name FROM table;
+Sorting SELECT col1, col2 FROM table ORDER BY col2; SELECT col1, col2 FROM table ORDER BY col2;
+Sorting backward SELECT col1, col2 FROM table ORDER BY col2 DESC; SELECT col1, col2 FROM table ORDER BY col2 DESC;
+Counting rows SELECT COUNT(*) FROM table; SELECT COUNT(*) FROM table;
+Grouping with counting SELECT owner, COUNT(*) FROM table GROUP BY 
+owner;
+SELECT owner, COUNT(*) FROM table GROUP BY 
+owner;
+Maximum value SELECT MAX(col_name) AS label FROM table; SELECT MAX(col_name) AS label FROM table;
+Selecting from multiple tables
+(Join same table using alias
+w/”AS”)
+SELECT pet.name, comment FROM pet, event WHERE 
+pet.name = event.name;
+SELECT pet.name, comment FROM pet JOIN event ON 
+(pet.name = event.name);
 
 
 
